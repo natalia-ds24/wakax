@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wakax - Concentrado para Vacas | Tienda</title>
+  <link rel="icon" type="image/x-icon" href="IMAGN/Best Quality.png">
+  <style>
+    :root{--accent:#6b4c2a;--accent-2:#d4a017;--bg:#fffaf3;--card:#ffffff;--muted:#5a4630}
+    *{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    body{margin:0;background:linear-gradient(180deg,#fffaf3 0%, #fdf7ed 100%);color:#2b1c12}
+    header{background:linear-gradient(90deg,var(--accent) 0%, #4b2f18 100%);color:white;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:50%;background:var(--accent-2);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.2)}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:600}
+
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.8));padding:28px;border-radius:16px;box-shadow:0 10px 30px rgba(60,40,20,0.1)}
+    .hero h1{margin:0;font-size:34px;line-height:1.05;color:var(--accent)}
+    .hero p{color:var(--muted);margin:12px 0 18px}
+    .cta{display:inline-flex;gap:10px}
+    .btn{background:var(--accent-2);color:#2b1c12;padding:12px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+    .btn.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);font-weight:700}
+
+    .cow-card{background:var(--card);padding:12px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(40,25,10,0.08)}
+    .section{margin-top:26px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .info-card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(40,25,10,0.06)}
+    .product-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .product{background:#fff;border-radius:12px;padding:14px;box-shadow:0 8px 20px rgba(40,25,10,0.08);display:flex;flex-direction:column;gap:10px}
+    .product h3{margin:0;color:var(--accent)}
+    .price{font-weight:800;color:var(--accent-2)}
+    .meta{color:var(--muted);font-size:14px}
+
+    footer{margin-top:32px;padding:16px;text-align:center;color:var(--muted)}
+
+    @media (max-width:980px){.hero{grid-template-columns:1fr; text-align:center}.product-list{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:1fr}.container{padding:0 14px}}
+    @media (max-width:560px){.product-list{grid-template-columns:1fr}.logo{width:48px;height:48px}.hero h1{font-size:26px}}
+
+    .cart-btn{position:fixed;right:18px;bottom:18px;background:var(--accent-2);padding:12px;border-radius:999px;color:#2b1c12;font-weight:800;border:none;box-shadow:0 10px 30px rgba(0,0,0,0.2);cursor:pointer}
+
+    .form-row{display:flex;gap:8px}
+    .input,textarea{padding:10px;border-radius:8px;border:1px solid #e6e6e6}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">
+        <img src="IMAGN/Best Quality.png" alt="Wakax logo" />
+      </div>
+      <div>
+        <div style="font-weight:800;font-size:20px">Wakax</div>
+        <div style="font-size:12px;opacity:0.9">Concentrado para vacas</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#origen">Origen</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Wakax — Nutrición con cariño para tus vacas</h1>
+        <p>Concentrado diseñado para ganaderos que buscan aumentar la producción y cuidar el bienestar del ganado. Fórmula equilibrada con proteínas, vitaminas y minerales.</p>
+        <div class="cta">
+          <button class="btn" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver productos</button>
+          <button class="btn secondary" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Cotizar</button>
+        </div>
+
+        <div class="section">
+          <div class="grid-3">
+            <div class="info-card">
+              <strong>Producción</strong>
+              <p class="meta">Aumento en la producción de leche gracias a ingredientes de alta disponibilidad.</p>
+            </div>
+            <div class="info-card">
+              <strong>Nutrición</strong>
+              <p class="meta">Proteínas, vitaminas y minerales esenciales para un desarrollo equilibrado.</p>
+            </div>
+            <div class="info-card">
+              <strong>Bienestar animal</strong>
+              <p class="meta">Formulado para cuidar la salud y reducir el riesgo de enfermedades.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cow-card" aria-hidden>
+        <img src="IMAGN/Anuncio Instagram (1080 x 1920 px) (1).png" alt="Logo Wakax" style="max-width:220px;border-radius:12px" />
+        <div style="padding:12px;text-align:center">
+          <strong>Wakax - Concentrado 25kg</strong>
+          <div class="meta">Fórmula estándar para mejorar producción y salud</div>
+          <div style="margin-top:10px"><button class="btn" onclick="addToCart(1)">Agregar al carrito — Q120</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos" class="section">
+      <h2>Productos</h2>
+      <div class="product-list" id="productList"></div>
+    </section>
+
+    <section id="beneficios" class="section">
+      <h2>Beneficios del concentrado Wakax</h2>
+      <ul>
+        <li>Aumento en la producción de leche, gracias a su fórmula enriquecida.</li>
+        <li>Aporte de nutrientes esenciales (proteínas, vitaminas y minerales) para un crecimiento equilibrado.</li>
+        <li>Mejor estado de salud del ganado, fortaleciendo el sistema inmunológico y reduciendo el riesgo de enfermedades.</li>
+        <li>Más energía y vitalidad, lo que se traduce en un ganado más fuerte y productivo.</li>
+        <li>Diseñado para ganaderos y productores, adaptado a las necesidades de fincas y pequeñas granjas.</li>
+      </ul>
+    </section>
+
+    <section id="origen" class="section">
+      <h2>Origen de la marca Wakax</h2>
+      <p>La marca Wakax nació con la idea de crear un concentrado para vacas que no solo aporte beneficios a los ganaderos, sino que también cuide de los animales. Observamos una oportunidad en el sector: había pocas opciones que combinaran nutrición de calidad con compromiso por el bienestar del ganado. </p>
+      <p>Queremos que Wakax sea una alternativa diferente, accesible y cercana, que facilite a los productores mejorar la salud y el rendimiento de sus vacas sin descuidar lo más importante: su bienestar.</p>
+    </section>
+
+    <section id="contacto" class="section">
+      <h2>Contacto / Cotizar</h2>
+      <p>¿Quieres una cotización o asesoría? Déjanos tus datos y te contactamos:</p>
+      <form onsubmit="event.preventDefault();sendQuote()" style="max-width:750px">
+        <div class="form-row">
+          <input required class="input" id="name" placeholder="Nombre" />
+          <input required class="input" id="phone" placeholder="Teléfono / WhatsApp" />
+        </div>
+        <div style="margin-top:8px">
+          <input class="input" id="farm" placeholder="Nombre de la finca (opcional)" />
+        </div>
+        <div style="margin-top:8px">
+          <textarea id="message" rows="4" class="input" placeholder="Mensaje / cantidad requerida"></textarea>
+        </div>
+        <div style="margin-top:10px">
+          <button class="btn" type="submit">Enviar solicitud</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <small>© Wakax 2025 · Hecho con cariño para el ganado</small>
+    </footer>
+  </main>
+
+  <button class="cart-btn" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+
+  <script>
+    const PRODUCTS = [
+      {id:1,title:'Wakax 25kg - Fórmula Estándar',price:120,desc:'Diseñado para aumentar producción y mantener salud general.'},
+      {id:2,title:'Wakax+ 25kg - Enriquecido',price:155,desc:'Con mayor contenido proteico y vitaminas.'},
+      {id:3,title:'Wakax Pastoreo 25kg',price:130,desc:'Optimizado para pasturas, mejor digestibilidad.'},
+      {id:4,title:'Wakax Starter 20kg',price:100,desc:'Mejor para ganado joven y desarrollo temprano.'},
+      {id:5,title:'Wakax Orgánico 25kg',price:180,desc:'Ingredientes seleccionados para producción orgánica.'},
+      {id:6,title:'Saco Reforzado - 50kg',price:220,desc:'Presentación a granel para grandes fincas.'}
+    ];
+
+    const cart = {};
+
+    function renderProducts(){
+      const list = document.getElementById('productList');
+      list.innerHTML='';
+      PRODUCTS.forEach(p=>{
+        const card = document.createElement('div'); card.className='product';
+        card.innerHTML = `
+          <h3>${p.title}</h3>
+          <div class="meta">${p.desc}</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+            <div class="price">Q${p.price}</div>
+            <div>
+              <button class="btn" onclick="addToCart(${p.id})">Agregar</button>
+            </div>
+          </div>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    function addToCart(id){
+      cart[id] = (cart[id]||0)+1;
+      updateCartCount();
+      alert('Artículo agregado al carrito');
+    }
+
+    function updateCartCount(){
+      const count = Object.values(cart).reduce((s,v)=>s+v,0);
+      document.getElementById('cartCount').innerText = count;
+    }
+
+    function openCart(){
+      const items = Object.keys(cart);
+      if(items.length===0){alert('Carrito vacío');return}
+      let text = 'Tu carrito:\n\n';
+      let total = 0;
+      items.forEach(id=>{
+        const p = PRODUCTS.find(x=>x.id==id);
+        const qty = cart[id];
+        text += `${p.title} — ${qty} x Q${p.price} = Q${p.price*qty}\n`;
+        total += p.price*qty;
+      });
+      text += `\nTotal: Q${total}`;
+      alert(text);
+    }
+
+    function sendQuote(){
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const farm = document.getElementById('farm').value;
+      const msg = document.getElementById('message').value;
+      alert('Solicitud enviada. Nos contactamos pronto. Gracias, '+name);
+      document.getElementById('name').value='';document.getElementById('phone').value='';document.getElementById('farm').value='';document.getElementById('message').value='';
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>
